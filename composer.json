@@ -1,0 +1,48 @@
+{
+    "name": "ixudra/addressable",
+    "description": "Custom Laravel package for address support for the Laravel 5 framework - developed by Ixudra",
+    "version": "1.0.0",
+    "keywords": ["Ixudra", "address", "Laravel"],
+    "homepage": "http://ixudra.be",
+    "license": "MIT",
+
+    "authors": [
+        {
+            "name": "Jan Oris",
+            "email": "jan.oris@ixudra.be"
+        }
+    ],
+
+    "require": {
+        "php": ">=7.0",
+        "illuminate/support": "~5.5",
+        "illuminate/database": "~5.5",
+        "ixudra/core": "~6.0",
+        "laravelcollective/html": "~5.2",
+        "laracasts/presenter": "0.2.*"
+    },
+
+    "suggest": {
+        "ixudra/translation": "Custom PHP translation library for the Laravel 5 framework"
+    },
+
+    "autoload": {
+        "classmap": [
+            "src/database/migrations"
+        ],
+        "psr-4": {
+            "Ixudra\\Addressable\\": "src/"
+        }
+    },
+
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ixudra\\Addressable\\AddressableServiceProvider"
+            ],
+            "aliases": {
+                "Addressable": "Ixudra\\Addressable\\Addressable"
+            }
+        }
+    }
+}
