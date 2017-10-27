@@ -1,7 +1,7 @@
 {
     "name": "ixudra/addressable",
     "description": "Custom Laravel package for address support for the Laravel 5 framework - developed by Ixudra",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "keywords": ["Ixudra", "address", "Laravel"],
     "homepage": "http://ixudra.be",
     "license": "MIT",

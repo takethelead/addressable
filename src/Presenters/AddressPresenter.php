@@ -13,7 +13,7 @@ class AddressPresenter extends BasePresenter {
     public function street()
     {
         $box = '';
-        if( $box != '' ) {
+        if( $this->box != '' ) {
             $box = ' '. $this->box;
         }
 

@@ -81,7 +81,9 @@ Create a model with a polymorphic relationship to the `Address` model:
 
         public function delete()
         {
-            $this->address->delete();
+            if( !is_null($this->address) ) {
+                $this->address->delete();
+            }
 
             parent::delete();
         }
