@@ -57,20 +57,18 @@ class Address extends Model {
      */
     public static function getRules()
     {
-        $countries = Config::get('addressable.countries');
+        $rules = Config::get('addressable.rules');
 
-        return array(
-            'street_1'                  => 'required|max:256',
-            'street_2'                  => 'max:256',
-            'number'                    => 'required|integer',
-            'box'                       => 'max:16',
-            'district'                  => 'max:128',
-            'postal_code'               => 'required|max:32',
-            'city'                      => 'required|max:128',
-            'country'                   => 'max:2|in:'. implode(',', $countries),
-            'latitude'                  => 'max:16',
-            'longitude'                 => 'max:16',
-        );
+        if( Config::get('addressable.restrictCountries') ) {
+            $countries = Config::get('addressable.countries');
+            if( !empty($rules[ 'country' ]) ) {
+                $rules[ 'country' ] .= '|';
+            }
+
+            $rules[ 'country' ] .= 'in:'. implode(',', $countries);
+        }
+
+        return $rules;
     }
 
     /**
@@ -78,18 +76,7 @@ class Address extends Model {
      */
     public static function getDefaults()
     {
-        return array(
-            'street_1'                  => '',
-            'street_2'                  => '',
-            'number'                    => '',
-            'box'                       => '',
-            'district'                  => '',
-            'postal_code'               => '',
-            'city'                      => '',
-            'country'                   => '',
-            'latitude'                  => '',
-            'longitude'                 => '',
-        );
+        return Config::get('addressable.defaults');
     }
 
 }
