@@ -13,11 +13,31 @@ class AddressPresenter extends BasePresenter {
     public function street()
     {
         $box = '';
-        if( $this->box != '' ) {
+        if( $this->box !== '' ) {
             $box = ' '. $this->box;
         }
 
-        return $this->street_1 .' '. $this->number . $box;
+        $street = $this->street_1;
+        if( $this->number !== '' && $this->box !== '' ) {
+            $street .= ' '. $this->number . $box;
+        }
+
+        return $street;
+    }
+
+    public function location($includeCountry = false)
+    {
+        $location = $this->postal_code .' '. $this->city;
+        if( $includeCountry ) {
+            $location .= ' ('. $this->country .')';
+        }
+
+        return $location;
+    }
+
+    public function compact()
+    {
+        return $this->street() .'<br />'. $this->location();
     }
 
 }
