@@ -7,7 +7,23 @@ class AddressPresenter extends BasePresenter {
 
     public function name()
     {
-        return $this->street() .', '. $this->postal_code  .' '. $this->city .' ('. $this->country .')';
+        $name = $this->street();
+        if( !empty($name) ) {
+            $name .=  ', ';
+        }
+
+        $name .= $this->entity->postal_code;
+        if( !empty($name) ) {
+            $name .=  ' ';
+        }
+
+        $name .= $this->entity->city;
+
+        if( !empty($name) && !empty($this->entity->country) ) {
+            $name .= ' (' . $this->entity->country . ')';
+        }
+
+        return $name;
     }
 
     public function street()

@@ -2,6 +2,10 @@
 
 All Notable changes to `ixudra/addressable` will be documented in this file
 
+## 1.3.0 - 2017-12-01
+### Updated
+- Address presentation options
+
 ## 1.2.0 - 2017-11-16
 ### Added
 - Additional address presentation options
