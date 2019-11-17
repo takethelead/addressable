@@ -9,7 +9,7 @@ class AddressValidationHelper extends BaseValidationHelper {
     public function getFilterValidationRules()
     {
         return array(
-            'query'         => ''
+            'query'         => '',
         );
     }
 

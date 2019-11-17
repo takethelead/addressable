@@ -22,6 +22,7 @@ class CreateTableIxudraAddressableAddresses extends Migration {
             $table->string('country', 32)->nullable()->default(null);
             $table->string('latitude', 16)->nullable()->default(null);
             $table->string('longitude', 16)->nullable()->default(null);
+
             $table->timestamps();
             $table->softDeletes();
         });
