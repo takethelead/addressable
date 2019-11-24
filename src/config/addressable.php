@@ -3,15 +3,15 @@
 
     return array(
 
-        'countries' => array(
-            'BE',
-            'NL',
-            'DE',
-            'IT',
-            'FR',
-            'UK',
-            'ES',
-            'US',
+        'countries'                 => array(
+            'be',
+            'nl',
+            'de',
+            'it',
+            'fr',
+            'uk',
+            'sp',
+            'us',
         ),
 
         'restrictCountries'         => true,
